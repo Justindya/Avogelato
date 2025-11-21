@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Avogelato - Gelato Sehat dari Alpukat Premium dengan Stevia">
+    <!-- WARNA -->
+    <meta name="theme-color" content="#345B40">
+    <title>Avogelato - Dessert Sehat Pilihan Anda</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🥑</text></svg>">
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbarNav">
+
+    <!-- Navigasi Atas -->
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand logo-title" href="#home">
+                🥑 Avogelato
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#produk">Produk</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimoni">Testimoni</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-primary cta-button" href="#produk">Lihat Varian Rasa</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <button id="themeToggle" class="btn btn-outline-secondary btn-sm theme-toggle-btn" aria-label="Toggle Dark Mode">
+                            <i class="bi bi-moon-stars-fill"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- HOME Section -->
+        <section id="home" class="hero-section-new section-fullscreen">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 hero-text reveal-on-scroll">
+                        <h1 class="display-3 fw-bold hero-title-gradient">
+                            Dessert <span class="text-primary-gradient">Sehat</span>,
+                            <br>Hidup <span class="text-primary-gradient">Nikmat</span>.
+                        </h1>
+                        <p class="lead my-4">
+                            Avogelato bukan cuma gelato. Ini adalah cara baru menikmati dessert tanpa rasa bersalah. Dibuat dari 100% alpukat premium dan pemanis stevia alami.
+                        </p>
+                        <a href="#produk" class="btn btn-primary btn-lg cta-button">Lihat Produk Kami</a>
+                        <a href="#testimoni" class="btn btn-outline-primary btn-lg ms-2 cta-button-outline">Lihat Testimoni</a>
+                    </div>
+                    <div class="col-lg-5 d-none d-lg-block reveal-on-scroll" data-scroll-delay="100">
+                        <!-- PERBAIKAN: Path gambar diarahkan ke folder assets -->
+                        <img src="assets/alpukat.png" class="img-fluid hero-image-new floating-animate" alt="Avogelato Bowl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUK Section -->
+        <section id="produk" class="py-5 section-bg section-fullscreen">
+            <div class="container">
+                <h2 class="section-title text-center mb-5 reveal-on-scroll">Varian Rasa Favorit</h2>
+                
+                <div class="row g-4">
+                    <!-- Product Card 1 -->
+                    <div class="col-md-6 col-lg-4 reveal-on-scroll">
+                        <div class="card product-card-new h-100">
+                            <!-- PERBAIKAN: Path gambar diarahkan ke folder assets -->
+                            <img src="assets/clasis.jpeg" alt="Avogelato Classic" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Avogelato Classic</h5>
+                                <p class="card-text">Rasa alpukat murni yang creamy dengan sentuhan vanilla alami.</p>
+                                <div class="product-price">Rp 35.000</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="col-md-6 col-lg-4 reveal-on-scroll" data-scroll-delay="150">
+                        <div class="card product-card-new h-100">
+                            <!-- PERBAIKAN: Path gambar diarahkan ke folder assets -->
+                            <img src="assets/choco.jpeg" alt="Avogelato Chocolate" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Avogelato Chocolate</h5>
+                                <p class="card-text">Perpaduan sempurna alpukat dan dark chocolate premium.</p>
+                                <div class="product-price">Rp 38.000</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="col-md-6 col-lg-4 reveal-on-scroll" data-scroll-delay="300">
+                        <div class="card product-card-new h-100">
+                            <!-- PERBAIKAN: Path gambar diarahkan ke folder assets -->
+                            <img src="assets/matcha.jpeg" alt="Avogelato Matcha" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Avogelato Matcha</h5>
+                                <p class="card-text">Kesegaran matcha Jepang berpadu dengan kelembutan alpukat.</p>
+                                <div class="product-price">Rp 40.000</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Section -->
+                <div class="video-section mt-5 reveal-on-scroll">
+                    <h3 class="text-center mb-4">Lihat Proses Pembuatan Kami</h3>
+                    <div class="ratio ratio-16x9 shadow-lg video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/y_YL3R32RzU" title="Avogelato Process" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONI Section -->
+        <section id="testimoni" class="py-5 section-fullscreen">
+            <div class="container">
+                <h2 class="section-title text-center mb-5 reveal-on-scroll">Apa Kata Mereka?</h2>
+                
+                <!-- Form Add Testimoni -->
+                <div class="card mb-4 testimonial-form-card reveal-on-scroll">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">Bagikan Pengalaman Anda</h5>
+                        <form id="testimonialForm">
+                            <div class="mb-3">
+                                <label for="nameInput" class="form-label">Nama</label>
+                                <input type="text" class="form-control" id="nameInput" required placeholder="Masukkan nama Anda">
+                            </div>
+                            <div class="mb-3">
+                                <label for="commentInput" class="form-label">Komentar</label>
+                                <textarea class="form-control" id="commentInput" rows="3" required placeholder="Ceritakan pengalaman Anda dengan Avogelato..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 cta-button">
+                                <i class="bi bi-send-fill me-2"></i>Kirim Testimoni
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Testimonials List -->
+                <div id="testimonialsList" class="row g-3"></div>
+
+                <!-- Empty State -->
+                <div id="emptyState" class="text-center py-5" style="display: none;">
+                    <i class="bi bi-chat-square-quote" style="font-size: 3rem; opacity: 0.3;"></i>
+                    <p class="text-muted mt-3">Belum ada testimoni. Jadilah yang pertama!</p>
+                </div>
+            </div>
+        </section>
+
+         <!-- KONTAK Section -->
+        <section id="kontak" class="py-5 section-bg section-fullscreen">
+            <div class="container">
+                <h2 class="section-title text-center mb-5 reveal-on-scroll">Hubungi Kami</h2>
+                <div class="row justify-content-center reveal-on-scroll">
+                    <div class="col-lg-8">
+                        <div class="card contact-card">
+                            <div class="card-body p-4 p-md-5">
+                                <!-- Info Kontak -->
+                                <div class="contact-info mb-4">
+                                    <div class="contact-item">
+                                        <i class="bi bi-geo-alt-fill"></i>
+                                        <div>
+                                            <h6>Alamat</h6>
+                                            <p>Jl. Sehat Sejahtera No. 123, Sukoharjo</p>
+                                        </div>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="bi bi-telephone-fill"></i>
+                                        <div>
+                                            <h6>Telepon</h6>
+                                            <p>+62 898-2188-488</p>
+                                        </div>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="bi bi-envelope-fill"></i>
+                                        <div>
+                                            <h6>Email</h6>
+                                            <p>hello@avogelato.com</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-4">
+                                
+                                <!-- Sosial Media -->
+                                <div class="text-center mt-4">
+                                    <h6 class="mb-3" style="font-weight: 700; color: var(--primary-color);">Ikuti Kami</h6>
+                                    
+                                    <!-- Ikon ada di dalam kotak ini -->
+                                    <div class="social-links justify-content-center">
+                                        <a href="#" class="social-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
+                                        <a href="#" class="social-icon" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                        <a href="#" class="social-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
+                                        <a href="#" class="social-icon" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer  -->
+    <footer class="footer text-center py-4">
+        <div class="container">
+            <!-- Copyright Brand -->
+            <p class="mb-2 text-muted">© 2025 Avogelato. Dibuat dengan 💚 untuk hidup lebih sehat.</p>
+            
+            <!-- Garis Pemisah -->
+            <hr class="my-3 mx-auto" style="width: 50%; opacity: 0.2;">
+
+            <!-- Info Mahasiswa -->
+            <div class="student-info small text-secondary">
+                <p class="mb-1">
+                    <strong>Created by:</strong> Cindy Ninda &bull; 
+                    Semester 5 &bull; 
+                    Informatika
+                </p>
+                <p class="mb-0">
+                    <a href="https://github.com/Justindya" target="_blank" class="text-decoration-none" style="color: var(--primary-color);">
+                        <i class="bi bi-github me-1"></i> Lihat Source Code di GitHub
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Edit Modal -->
+    <div class="modal fade" id="editModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Testimoni</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editForm">
+                        <input type="hidden" id="editIndex">
+                        <div class="mb-3">
+                            <label for="editName" class="form-label">Nama</label>
+                            <input type="text" class="form-control" id="editName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editComment" class="form-label">Komentar</label>
+                            <textarea class="form-control" id="editComment" rows="3" required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-primary cta-button" id="saveEdit">Simpan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

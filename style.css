@@ -1,0 +1,408 @@
+/* ===== CSS VARIABLES (WARNA ORIGINAL + MODERN) ===== */
+:root {
+    /* Palet Warna Original Avogelato */
+    --primary-color: #345B40;      /* Hijau Tua Deep */
+    --secondary-color: #59372A;    /* Cokelat Kopi */
+    --accent-color: #4A7C59;       /* Hijau Aksen */
+    
+    /* Background */
+    --light-green: #F4F9F6;        /* Hijau sangat tipis untuk background */
+    --bg-color: #FAF9F6;           /* Background utama Putih Tulang */
+    --card-bg: #FFFFFF;            /* Kartu Putih */
+    
+    /* Warna Netral */
+    --text-color: #212529;         
+    --text-secondary: #6C757D;
+    --border-color: #E0E0E0;
+    --shadow: rgba(0, 0, 0, 0.08); /* Shadow halus */
+    
+    /* Variabel untuk tinggi navbar */
+    --scroll-padding: 80px; 
+}
+
+/* Dark Mode Adjustment */
+[data-theme="dark"] {
+    --primary-color: #4A7C59;     
+    --secondary-color: #8B5A3C;   
+    --accent-color: #5D9170;      
+    --light-green: #242526;       
+
+    --bg-color: #1A1A1A;          
+    --text-color: #E9ECEF;
+    --text-secondary: #ADB5BD;
+    --border-color: #495057;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --card-bg: #2D2D2D;
+}
+
+/* ===== GLOBAL STYLES ===== */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--scroll-padding); 
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Pola Topografi Halus */
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23345B40' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm-4-30v4h-2v-4h-4v-2h4v-4h2v4h4v2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4v-4H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Animasi Gambar Melayang */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); } 
+    100% { transform: translateY(0px); }
+}
+.floating-animate {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Fullscreen Section */
+.section-fullscreen {
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: var(--scroll-padding);
+    padding-bottom: 2rem;
+}
+
+/* Animasi Scroll */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== NAVBAR ATAS ===== */
+.navbar {
+    background-color: transparent;
+    transition: all 0.4s ease;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid transparent;
+}
+
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.95) !important; 
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+[data-theme="dark"] .navbar.scrolled {
+    background-color: rgba(26, 26, 26, 0.95) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.logo-text {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+.logo-container:hover .logo-text {
+    transform: scale(1.03);
+}
+.logo-container svg {
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.logo-container:hover svg {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.navbar .nav-link {
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    padding: 0.5rem 1rem;
+}
+
+.navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+    width: 80%; 
+}
+.navbar .nav-link:hover {
+    color: var(--primary-color);
+}
+.navbar .nav-link.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* ===== WARNA TOMBOL ===== */
+.btn-primary, .cta-button {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: white !important;
+    font-weight: 500;
+    border-radius: 50px;
+    padding: 0.5rem 1.25rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(52, 91, 64, 0.2);
+}
+
+.btn-primary:hover, .cta-button:hover {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary, .cta-button-outline {
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    background-color: transparent !important;
+    font-weight: 500;
+    border-radius: 50px;
+    padding: 0.5rem 1.25rem;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover, .cta-button-outline:hover {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(52, 91, 64, 0.2);
+}
+
+.theme-toggle-btn {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.theme-toggle-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: scale(1.1) rotate(15deg);
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section-new {
+    background-color: var(--bg-color);
+}
+.hero-text .display-3 {
+    font-weight: 800;
+}
+.hero-title-gradient .text-primary-gradient {
+    background: linear-gradient(135deg, var(--primary-color) 20%, var(--secondary-color) 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.hero-text .lead {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+}
+.hero-image-new {
+    max-height: 450px; 
+    object-fit: contain;
+}
+
+/* ===== SECTION UMUM ===== */
+section { width: 100%; }
+.section-bg {
+    background-color: var(--light-green);
+}
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center; 
+    display: block; 
+    width: 100%;
+}
+
+/* ===== PRODUCT CARDS ===== */
+.product-card-new {
+    border: 1px solid var(--border-color);
+    border-radius: 20px; 
+    overflow: hidden;
+    box-shadow: 0 4px 12px var(--shadow);
+    transition: all 0.3s ease; 
+    background: var(--card-bg); 
+    cursor: pointer; 
+}
+.product-card-new:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 30px rgba(52, 91, 64, 0.15); 
+}
+.product-card-new .card-img-top {
+    height: 200px; /* Tinggi */
+    width: 100%;
+    object-fit: cover; 
+    object-position: center; /* Fokus ke tengah gambar */
+    transition: transform 0.4s ease; 
+}
+.product-card-new:hover .card-img-top {
+    transform: scale(1.05);
+}
+.product-card-new .card-body { padding: 1.5rem; text-align: center; }
+.product-card-new .card-title {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+.product-card-new .card-text {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+.product-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-top: 0.5rem;
+}
+
+/* ===== VIDEO SECTION ===== */
+.video-section { max-width: 800px; margin: 0 auto; }
+.video-wrapper {
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--card-bg);
+    border: 2px solid #fff; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* ===== TESTIMONI ===== */
+.testimonial-form-card {
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    background: var(--card-bg);
+    box-shadow: 0 4px 12px var(--shadow);
+}
+.form-control {
+    border-radius: 10px;
+    padding: 0.75rem;
+    background: #FCFCFC; 
+    border: 1px solid var(--border-color);
+}
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(52, 91, 64, 0.25);
+}
+.testimonial-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px var(--shadow);
+    height: 100%;
+}
+.testimonial-name { font-weight: 700; color: var(--primary-color); }
+.testimonial-comment { color: var(--text-color); font-style: italic; }
+
+/* ===== CONTACT (LAYOUT DIPERBAIKI) ===== */
+.contact-card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px var(--shadow);
+    background: var(--card-bg);
+}
+.contact-info { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 1.5rem; 
+}
+.contact-item { 
+    display: flex; 
+    gap: 1rem; 
+    align-items: flex-start; 
+}
+.contact-item i { 
+    font-size: 1.5rem; 
+    color: var(--primary-color); 
+    margin-top: 3px;
+}
+.contact-item h6 { 
+    font-weight: 700; 
+    color: var(--primary-color); 
+    margin-bottom: 0.2rem;
+}
+.contact-item p { 
+    color: var(--text-secondary); 
+    margin: 0; 
+}
+
+.social-links { 
+    display: flex; 
+    gap: 1rem; 
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: wrap; 
+}
+.social-icon {
+    width: 45px; height: 45px; border-radius: 50%;
+    background: var(--primary-color); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; text-decoration: none; margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.social-icon:hover { 
+    background: var(--secondary-color); 
+    color: white; 
+    transform: translateY(-3px); 
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background-color: var(--primary-color); 
+    color: white !important; 
+}
+
+.footer .text-muted {
+    color: rgba(255,255,255,0.8) !important; 
+}
+.footer hr { 
+    background-color: white; 
+    opacity: 0.3; 
+}
+
+.footer a { 
+    color: #C6D870 !important; 
+    font-weight: bold; 
+}
+
+.footer .student-info {
+    color: rgba(255,255,255,0.9) !important;
+}
+.footer .student-info strong {
+    color: white;
+}
+
+/* ===== MODAL ===== */
+.modal-content { border-radius: 20px; }
